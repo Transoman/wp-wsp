@@ -1,0 +1,50 @@
+.nav
+  display: none
+
+
+.nav-toggle
+  position: absolute
+  left: -6.5rem
+  top: 0.5rem
+  width: 2.4rem
+  height: 2.4rem
+  padding: 0
+  margin: 0
+  outline: none
+  border: none
+  background: none
+  z-index: 10
+  cursor: pointer
+  +md-block
+    left: 15px
+  &:focus
+    outline: none
+  &__line
+    position: relative
+    display: block
+    height: 2px
+    width: 100%
+    background-color: $main-color
+    +trans
+    &::after, &::before
+      content: ''
+      position: absolute
+      left: 0
+      display: block
+      height: 2px
+      width: 100%
+      background-color: $main-color
+      +trans
+    &::before
+      top: -6px
+    &::after
+      top: 6px
+  &.active
+    .nav-toggle__line
+      background: transparent
+      &::after
+        top: 0
+        transform: rotate(45deg)
+      &::before
+        top: 0
+        transform: rotate(-45deg)

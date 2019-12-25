@@ -1,0 +1,128 @@
+.hero
+  padding: 19rem 0 4rem
+  background:
+    repeat: no-repeat
+    position: center bottom
+    size: cover
+  +sm-block
+    padding-top: 10rem
+  .container
+    position: relative
+  &__content
+    max-width: 69rem
+    +sm-block
+      text-align: center
+  &__title
+    margin-bottom: 1.5rem
+    span
+      position: relative
+      z-index: 1
+      display: inline-block
+      padding: 1.1rem 3rem 0.9rem
+      font-family: $axiforma
+      font-size: 1.6rem
+      font-weight: 500
+      color: #fff
+      transform: translateY(-1.3rem)
+      text-transform: none
+      letter-spacing: 0
+      +sm-block
+        font-size: 1.2rem
+        transform: none
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+        background: linear-gradient(270deg, #2063B1 0%, #3CBAFC 100%)
+        border-radius: 0.6rem
+        transform: skewX(-20deg)
+  &__subtitle
+    font-family: $axiforma
+    font-size: 2.4rem
+    letter-spacing: 0.03em
+    +sm-block
+      font-size: 1.8rem
+    strong
+      font-size: 4.2rem
+      font-weight: 500
+      +lg-block
+        font-size: 3rem
+      +sm-block
+        font-size: 2.4rem
+    span
+      font-size: 4.2rem
+      font-weight: 500
+      color: $accent
+      +lg-block
+        font-size: 3rem
+      +sm-block
+        font-size: 2.4rem
+  &__bottom
+    display: flex
+    align-items: center
+    margin-top: 10rem
+    padding: 1rem
+    background-color: #fff
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25)
+    border-radius: 1rem
+    +lg-block
+      flex-direction: column
+    +sm-block
+      margin-top: 5rem
+    .gift
+      margin-left: auto
+      +lg-block
+        margin: 3rem auto 0
+  .scroll-down
+    position: absolute
+    top: 35%
+    left: -5.5rem
+    transform: translateY(-50%)
+    +to(840px)
+      display: none
+      
+.hero-statistic
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  padding-left: 3rem
+  +lg-block
+    padding-left: 0
+  &__item
+    display: flex
+    align-items: center
+    margin-right: 5.5rem
+    +lg-block
+      margin-right: 3rem
+    +sm-block
+      flex-direction: column
+      width: 100%
+      margin-right: 0
+      margin-bottom: 2rem
+      text-align: center
+    &:last-child
+      margin-right: 0
+      +sm-block
+        margin-bottom: 0
+  &__number
+    margin-right: 1.5rem
+    font-family: $din
+    font-size: 8rem
+    font-weight: normal
+    color: $accent
+    line-height: 1
+    +lg-block
+      font-size: 5rem
+    +sm-block
+      font-size: 4rem
+      margin-right: 0
+      margin-bottom: 1rem
+  &__text
+    margin: 0
+    font-family: $axiforma
+    font-size: 1.8rem
+    line-height: 1.2
