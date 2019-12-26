@@ -5,7 +5,9 @@ let svg4everybody = require('svg4everybody'),
   popup = require('jquery-popup-overlay'),
   iMask = require('imask'),
   Swiper = require('swiper'),
-  noUiSlider = require('nouislider');
+  noUiSlider = require('nouislider'),
+  tabslet = require('tabslet'),
+  fancybox = require('@fancyapps/fancybox');
 
 jQuery(document).ready(function($) {
   // Toggle nav menu
@@ -80,6 +82,58 @@ jQuery(document).ready(function($) {
     }
   });
 
+  new Swiper('.certifications-slider', {
+    slidesPerView: 1,
+    spaceBetween: 75,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      577: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      },
+      1131: {
+        slidesPerView: 4
+      }
+    }
+  });
+
+  let gallery = new Swiper('.gallery-slider', {
+    slidesPerView: 1,
+    watchOverflow: true,
+    slidesPerGroup: 3,
+    speed: 1000,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      },
+      1131: {
+        slidesPerView: 3
+      }
+    }
+  });
+
+  $().fancybox({
+    selector: '[data-fancybox="gallery"]',
+    hash: false,
+    loop: true,
+    beforeClose : function(instance) {
+      if ($('.gallery-slider').length) {
+        gallery.slideToLoop( instance.currIndex, 1000);
+      }
+    }
+  });
+
   let range = $('.calculator-depth')[0];
 
   if (range) {
@@ -137,6 +191,8 @@ jQuery(document).ready(function($) {
     });
 
   };
+
+  $('.advantages-tabs').tabslet();
 
 
   toggleNav();

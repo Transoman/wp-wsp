@@ -96,6 +96,8 @@ if ( ! function_exists( 'ith_setup' ) ) :
      * Added image sizes
      */
     add_image_size( 'calculator-material', 0, 72, true );
+    add_image_size( 'certificate', 190, 260, true );
+    add_image_size( 'gallery', 390, 440, true );
   }
 endif;
 add_action( 'after_setup_theme', 'ith_setup' );

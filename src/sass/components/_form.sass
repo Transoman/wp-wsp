@@ -1,6 +1,17 @@
 .form-group
   position: relative
-  margin-bottom: 20px
+  margin-bottom: 30px
+  &--btn
+    margin-bottom: 0
+.form-row
+  display: flex
+  +sm-block
+    flex-direction: column
+  & > *:not(:last-child)
+    margin-right: 3rem
+    +sm-block
+      margin-right: 0
+      margin-bottom: 3rem
 .form-field
   width: 100%
   padding: 2rem
@@ -32,3 +43,13 @@
   span
     font-weight: 400
     color: $dove-gray
+
+.form-note
+  margin: 0
+  font-size: 1rem
+  color: #7E7E7E
+  a
+    color: inherit
+    text-decoration: underline
+    &:hover, &:focus
+      text-decoration: none

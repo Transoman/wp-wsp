@@ -1,0 +1,127 @@
+.equipment
+  .section-title
+    margin-bottom: 1.5rem
+    letter-spacing: 0
+  &__row
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+    +sm-block
+      flex-direction: column-reverse
+  &__left
+    width: calc(48% - 30px)
+    margin-right: 15px
+    margin-left: 15px
+    padding-top: 5rem
+    padding-right: 4.5rem
+    +lg-block
+      width: calc(50% - 30px)
+    +sm-block
+      width: calc(100% - 30px)
+      margin-bottom: 3rem
+      padding-right: 0
+      text-align: center
+  &__right
+    width: calc(52% - 30px)
+    margin-right: 15px
+    margin-left: 15px
+    +lg-block
+      width: calc(50% - 30px)
+    +sm-block
+      width: calc(100% - 30px)
+  &__banner
+    &-content
+      position: relative
+      margin-bottom: 1.5rem
+      padding: 5rem 3rem 7.5rem
+      background: $blue url(images/general/equipment-bg.jpg) no-repeat center / cover
+      font-family: $axiforma
+      color: #fff
+      +md-block
+        margin-bottom: 3rem
+        padding: 3rem 2rem 7rem
+      +sm-block
+        padding-bottom: 3rem
+      img
+        position: absolute
+        right: -5.5rem
+        bottom: 0
+        transform: translateY(40%)
+        +lg-block
+          width: 50%
+        +md-block
+          transform: translateY(20%)
+        +sm-block
+          display: none
+    &-text-1
+      font-size: 3rem
+      font-weight: 700
+      margin-bottom: 1.5rem
+      +lg-block
+        font-size: 2.5rem
+      +md-block
+        font-size: 2rem
+    &-text-2
+      margin: 0
+      font-weight: 100
+      font-size: 3.6rem
+      color: #EFEFEF
+      +lg-block
+        font-size: 3rem
+      +md-block
+        font-size: 2.5rem
+  &__descr
+    font-family: $axiforma
+    font-size: 1.8rem
+    ul
+      margin: 3.5rem 0 0 3rem
+      padding: 0
+      list-style: none
+      li
+        @extend .about-list__item
+        margin-bottom: 2rem
+        font-family: $main-font
+        font-size: 1.8rem
+        &::before
+          top: 50%
+          transform: translateY(-50%)
+
+.equipment-list
+  margin-top: 9rem
+  +sm-block
+    margin-top: 0
+  &__item
+    +col
+    +size(4)
+    +size-md(6)
+    +size-sm(12)
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 3rem
+    padding: 2rem 5rem 4rem
+    background-color: #fff
+    box-shadow: 0 10px 30px rgba(145, 197, 248, 0.25)
+    border-radius: 1rem
+    text-align: center
+    .btn
+      max-width: 20.5rem
+      width: 100%
+  &__title
+    margin-bottom: 1rem
+    letter-spacing: 0
+  &__descr
+    margin-bottom: 2.5rem
+    font-size: 2.4rem
+    color: $dove-gray
+    +sm-block
+      font-size: 1.6rem
+  &__price
+    margin-top: auto
+    font-family: $axiforma
+    font-size: 1.8rem
+    font-weight: 700
+    color: $blue
+    text-transform: uppercase
+    span
+      font-size: 3rem

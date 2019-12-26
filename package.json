@@ -36,13 +36,15 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "imask": "^5.2.1",
     "jquery": "^3.4.1",
     "jquery-popup-overlay": "^2.1.4",
     "normalize.css": "^8.0.1",
     "nouislider": "^14.1.1",
     "svg4everybody": "^2.1.9",
-    "swiper": "^5.2.1"
+    "swiper": "^5.2.1",
+    "tabslet": "^1.7.3"
   },
   "browserslist": [
     "last 5 version",

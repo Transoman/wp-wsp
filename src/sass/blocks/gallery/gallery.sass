@@ -1,0 +1,76 @@
+.gallery
+  padding: 0
+  .container
+    +sm-block
+      padding: 0
+
+.gallery-slider
+  overflow: visible
+  .swiper-wrapper
+    overflow: visible
+  &__item
+    position: relative
+    &.swiper-slide-prev,
+    &.swiper-slide-next + div + div
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-color: rgba($blue, 0.5)
+        +trans
+      .gallery-slider
+        &__view-full
+          opacity: 0
+    &.swiper-slide-next + div + div
+      &::before
+        +md-block
+          display: none
+    &.swiper-slide-next + div
+      +md-block
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          background-color: rgba($blue, 0.5)
+          +trans
+  &__img
+    display: block
+    width: 100%
+  &__view-full
+    position: absolute
+    top: 2rem
+    right: 2rem
+    z-index: 1
+    width: 3rem
+    height: 3rem
+    +trans
+  .swiper-button-prev,
+  .swiper-button-next
+    width: 6.5rem
+    height: 6.5rem
+    border-radius: 50%
+    background: linear-gradient(270deg, #2063B1 0%, #3CBAFC 100%)
+    box-shadow: 0 5px 20px rgba(40, 123, 198, 0.15)
+    &::after
+      display: none
+    svg
+      font-size: 3rem
+      fill: #fff
+  .swiper-button-prev
+    left: 0
+    transform: translateX(-50%)
+    +sm-block
+      left: 1rem
+      transform: none
+  .swiper-button-next
+    right: 0
+    transform: translateX(50%)
+    +sm-block
+      right: 1rem
+      transform: none
