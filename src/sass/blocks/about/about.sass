@@ -1,0 +1,119 @@
+.about
+  .section-head
+    +from(1131px)
+      margin-bottom: 10rem
+  .row
+    +md-block
+      flex-direction: column-reverse
+  &__left
+    +col
+    +size(6)
+    +size-md(12)
+    position: relative
+    padding-top: 3rem
+    padding-right: 10rem
+    text-align: right
+    font-size: 1.6rem
+    +md-block
+      padding: 0
+      text-align: center
+    p
+      margin-bottom: 2rem
+      +sm-block
+        br
+          display: none
+      &:last-child
+        margin-bottom: 0
+  &__right
+    +col
+    +size(6)
+    +size-md(8)
+    +size-sm(12)
+    position: relative
+    z-index: 1
+    padding-left: 7rem
+    +md-block
+      margin-bottom: 13rem
+      padding-left: 0
+    +sm-block
+      margin-bottom: 0
+  &__depth
+    position: absolute
+    right: -3rem
+    top: -7rem
+    padding-right: 4.5rem
+    background: url(images/general/arrows.svg) no-repeat right top / auto
+    pointer-events: none
+    +md-block
+      display: none
+    &-number
+      font-family: $din
+      font-size: 8rem
+      color: $blue
+      line-height: 1
+      span
+        font-size: 2.4rem
+      &--1
+        margin-bottom: 32rem
+  &__img
+    position: absolute
+    bottom: -11rem
+    right: -10rem
+    z-index: -1
+    pointer-events: none
+    +lg-block
+      right: -17rem
+    +sm-block
+      position: relative
+      bottom: auto
+      right: auto
+      margin: 5rem auto 0
+      text-align: right
+  .ribbon-free
+    position: absolute
+    bottom: 7rem
+    left: -8rem
+    +lg-block
+      left: -3rem
+    +md-block
+      left: -8rem
+    +sm-block
+      left: 0
+
+.about-list
+  margin: 0
+  padding: 0
+  list-style: none
+  &__item
+    position: relative
+    margin-bottom: 3rem
+    padding-left: 5rem
+    color: #6B6B6B
+    +sm-block
+      padding-left: 3.5rem
+    &::before
+      content: ''
+      position: absolute
+      top: 0.5rem
+      left: 0
+      width: 3.2rem
+      height: 3.2rem
+      border-radius: 50%
+      background: url(images/general/check.svg) no-repeat center, linear-gradient(270deg, #2063B1 0%, #3CBAFC 100%)
+      box-shadow: 0 5px 20px rgba(40, 123, 198, 0.15)
+      +sm-block
+        width: 2.5rem
+        height: 2.5rem
+        background-size: 1rem, auto
+    p
+      +sm-block
+        br
+          display: none
+      &:last-child
+        margin: 0
+    strong
+      font-size: 1.6rem
+      font-weight: 500
+      color: $main-color
+    &:last-child
+      margin-bottom: 0

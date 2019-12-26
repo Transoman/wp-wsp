@@ -1,0 +1,48 @@
+.materials-advantages
+  position: relative
+  &__img
+    max-width: none
+  &__item
+    position: absolute
+    &:nth-of-type(1)
+      top: 1rem
+      left: -6rem
+      z-index: 1
+    &:nth-of-type(2)
+      top: 0
+      left: 12rem
+    &:nth-of-type(3)
+      top: 14rem
+      left: -3rem
+  &__dot
+    width: 3.2rem
+    height: 3.2rem
+    margin-left: auto
+    margin-bottom: 1rem
+    border-radius: 50%
+    background: linear-gradient(180deg, #FFB34F 0%, #F75C2E 100%)
+    box-shadow: 0 5px 20px rgba(40, 123, 198, 0.15)
+    font-size: 2rem
+    color: #fff
+    text-align: center
+    line-height: 3.2rem
+    cursor: pointer
+    &:hover + .materials-advantages__info
+      opacity: 1
+      visibility: visible
+  &__info
+    display: flex
+    align-items: center
+    width: 23.5rem
+    padding: 1rem 2rem
+    background-color: #fff
+    box-shadow: 0 5px 20px rgba(35, 107, 184, 0.15)
+    border-radius: 1rem
+    opacity: 0
+    visibility: hidden
+    +trans
+    img
+      width: 3.5rem
+      margin-right: 2rem
+    p
+      margin: 0

@@ -3,11 +3,32 @@
   margin-bottom: 20px
 .form-field
   width: 100%
-  padding: 15px 25px
-  border: 1px solid #C4C4C4
-  border-radius: 5px
+  padding: 2rem
+  border: 1px solid #DBDBDB
+  border-radius: 1rem
+  background-color: #fff
   box-shadow: none
   appearance: none
+  font-size: 1.6rem
+  color: $dove-gray
+  +trans
   &:focus
     outline: none
     border-color: $accent
+  &--select
+    padding-right: 6rem
+    background:
+      image: url(images/general/chevron-down.svg)
+      repeat: no-repeat
+      position: calc(100% - 2rem) center
+    cursor: pointer
+
+.form-label
+  display: block
+  margin-bottom: 1rem
+  font-family: $axiforma
+  font-size: 1.6rem
+  font-weight: 700
+  span
+    font-weight: 400
+    color: $dove-gray

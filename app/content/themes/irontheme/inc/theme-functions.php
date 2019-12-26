@@ -91,6 +91,11 @@ if ( ! function_exists( 'ith_setup' ) ) :
       'image',
       'video'
     ) );
+
+    /**
+     * Added image sizes
+     */
+    add_image_size( 'calculator-material', 0, 72, true );
   }
 endif;
 add_action( 'after_setup_theme', 'ith_setup' );

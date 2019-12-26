@@ -40,7 +40,9 @@
     "jquery": "^3.4.1",
     "jquery-popup-overlay": "^2.1.4",
     "normalize.css": "^8.0.1",
-    "svg4everybody": "^2.1.9"
+    "nouislider": "^14.1.1",
+    "svg4everybody": "^2.1.9",
+    "swiper": "^5.2.1"
   },
   "browserslist": [
     "last 5 version",
