@@ -129,7 +129,8 @@ jQuery(document).ready(function($) {
     slidesPerView: 1,
     watchOverflow: true,
     speed: 1000,
-    // loop: true,
+    loop: true,
+    centeredSlides: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -144,20 +145,11 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $('.gallery-slider__item').click(function() {
-    console.log(gallery.clickedIndex);
-  });
-
   $().fancybox({
     selector: '[data-fancybox="gallery"]',
     hash: false,
     loop: true,
-    beforeClose : function(instance) {
-      if ($('.gallery-slider').length) {
-        console.log(instance.currIndex);
-        gallery.slideTo( instance.currIndex, 1000);
-      }
-    }
+    backFocus: false
   });
 
   let range = $('.calculator-depth')[0];

@@ -5,6 +5,33 @@
       padding: 0
 
 .gallery-slider
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    z-index: 2
+    width: 18.8%
+    background-color: rgba($blue, 0.5)
+    +md-block
+      width: 25%
+    +sm-block
+      display: none
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: 2
+    width: 18.8%
+    background-color: rgba($blue, 0.5)
+    +md-block
+      width: 25%
+    +sm-block
+      display: none
   &__item
     position: relative
     background-color: $blue
@@ -15,15 +42,17 @@
     &.swiper-slide-active
       .gallery-slider
         &__view-full
-          opacity: 0
-        &__img
-          opacity: 0.5
-      & + div + div + div + div
+          opacity: 1
+    &.swiper-slide-prev
+      +from(1131px)
         .gallery-slider
           &__view-full
-            opacity: 0
-          &__img
-            opacity: 0.5
+            opacity: 1
+    &.swiper-slide-next
+      +from(1131px)
+        .gallery-slider
+          &__view-full
+            opacity: 1
   &__img
     display: block
     width: 100%
@@ -35,6 +64,7 @@
     z-index: 1
     width: 3rem
     height: 3rem
+    opacity: 0
     +trans
   .swiper-button-prev,
   .swiper-button-next
@@ -49,12 +79,16 @@
       font-size: 3rem
       fill: #fff
   .swiper-button-prev
-    left: 16.5%
+    left: 17%
+    +md-block
+      left: 21.5%
     +sm-block
       left: 1rem
       transform: none
   .swiper-button-next
-    right: 16.5%
+    right: 17%
+    +md-block
+      right: 21.5%
     +sm-block
       right: 1rem
       transform: none
