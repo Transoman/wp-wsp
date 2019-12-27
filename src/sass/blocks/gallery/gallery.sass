@@ -73,11 +73,16 @@
     border-radius: 50%
     background: linear-gradient(270deg, #2063B1 0%, #3CBAFC 100%)
     box-shadow: 0 5px 20px rgba(40, 123, 198, 0.15)
+    +sm-block
+      width: 3.5rem
+      height: 3.5rem
     &::after
       display: none
     svg
       font-size: 3rem
       fill: #fff
+      +sm-block
+        font-size: 1.5rem
   .swiper-button-prev
     left: 17%
     +md-block
