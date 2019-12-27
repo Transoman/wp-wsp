@@ -30,17 +30,24 @@
 
       <nav class="nav">
         <button type="button" class="nav__close"></button>
-        <?php
-        wp_nav_menu( array(
-          'theme_location' => 'primary',
-          'menu'            => '',
-          'container'       => '',
-          'container_class' => '',
-          'container_id'    => '',
-          'menu_class'      => 'nav-list',
-          'menu_id'         => '',
-        ) );
-        ?>
+
+        <ul class="nav-list">
+          <li>
+            <a href="#about">О нас</a>
+          </li>
+          <li>
+            <a href="#calculator">Калькулятор</a>
+          </li>
+          <li>
+            <a href="#equipment">Обустройство скважины</a>
+          </li>
+          <li>
+            <a href="#testimonial">Отзывы</a>
+          </li>
+          <li>
+            <a href="#steps">Этапы работы</a>
+          </li>
+        </ul>
       </nav>
       <div class="nav-overlay"></div>
 

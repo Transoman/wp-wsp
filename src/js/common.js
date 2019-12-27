@@ -13,26 +13,26 @@ jQuery(document).ready(function($) {
   // Toggle nav menu
   let toggleNav = function () {
     let toggle = $('.nav-toggle');
-    let nav = $('.header__nav');
+    let nav = $('.nav');
     let closeNav = $('.nav__close');
     let overlay = $('.nav-overlay');
 
     toggle.on('click', function (e) {
       e.preventDefault();
       nav.toggleClass('open');
-      overlay.toggleClass('is-active');
+      overlay.toggleClass('active');
     });
 
     closeNav.on('click', function (e) {
       e.preventDefault();
       nav.removeClass('open');
-      overlay.removeClass('is-active');
+      overlay.removeClass('active');
     });
 
     overlay.on('click', function (e) {
       e.preventDefault();
       nav.removeClass('open');
-      $(this).removeClass('is-active');
+      $(this).removeClass('active');
     });
   };
 
@@ -82,6 +82,28 @@ jQuery(document).ready(function($) {
     }
   });
 
+  new Swiper('.testimonial-slider', {
+    slidesPerView: 1,
+    spaceBetween: -10,
+    centeredSlides: true,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 1.5
+      },
+      1131: {
+        slidesPerView: 2.5,
+      },
+      1400: {
+        slidesPerView: 3,
+      },
+    }
+  });
+
   new Swiper('.certifications-slider', {
     slidesPerView: 1,
     spaceBetween: 75,
@@ -106,9 +128,8 @@ jQuery(document).ready(function($) {
   let gallery = new Swiper('.gallery-slider', {
     slidesPerView: 1,
     watchOverflow: true,
-    slidesPerGroup: 3,
     speed: 1000,
-    loop: true,
+    // loop: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -118,9 +139,13 @@ jQuery(document).ready(function($) {
         slidesPerView: 2
       },
       1131: {
-        slidesPerView: 3
+        slidesPerView: 4.8
       }
     }
+  });
+
+  $('.gallery-slider__item').click(function() {
+    console.log(gallery.clickedIndex);
   });
 
   $().fancybox({
@@ -129,7 +154,8 @@ jQuery(document).ready(function($) {
     loop: true,
     beforeClose : function(instance) {
       if ($('.gallery-slider').length) {
-        gallery.slideToLoop( instance.currIndex, 1000);
+        console.log(instance.currIndex);
+        gallery.slideTo( instance.currIndex, 1000);
       }
     }
   });
@@ -174,6 +200,7 @@ jQuery(document).ready(function($) {
     let price = 0;
     let depth = range.noUiSlider.get();
     let result = $('.calculator__result span');
+    let resultBtn = $('.calculator__result-wrap .btn');
 
     materialBtn.click(function(e) {
       e.preventDefault();
@@ -190,9 +217,63 @@ jQuery(document).ready(function($) {
       result.text(addSpaces(price * values[handle]));
     });
 
+    resultBtn.click(function() {
+      let name = $('.calculator-materials__item.check').find('.calculator-materials__descr').text()
+      let area = $('#area').val();
+      let sum = result.text();
+
+      $('#calculator input[name="your-material"]').val(name);
+      $('#calculator input[name="your-area"]').val(area);
+      $('#calculator input[name="your-depth"]').val(depth);
+      $('#calculator input[name="your-sum"]').val(sum);
+
+    });
+
   };
 
   $('.advantages-tabs').tabslet();
+
+  $('.equipment_open').click(function() {
+    let name = $(this).parent().find('.equipment-list__descr').text();
+
+    $('#equipment input[name="your-serv"]').val(name);
+  });
+
+  $('.consultation_open').click(function() {
+    let name = $(this).data('theme');
+
+    $('#consultation input[name="your-theme"]').val(name);
+  });
+
+  $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+      // On-page links
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+        &&
+        location.hostname == this.hostname
+      ) {
+        // Figure out element to scroll to
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        // Does a scroll target exist?
+        if (target.length) {
+          // Only prevent default if animation is actually gonna happen
+          event.preventDefault();
+
+          $('.nav').removeClass('open');
+          $('.nav-toggle').removeClass('active');
+          $('.nav-overlay').removeClass('active');
+
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+        }
+      }
+    });
 
 
   toggleNav();

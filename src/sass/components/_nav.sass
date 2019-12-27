@@ -1,6 +1,54 @@
 .nav
-  display: none
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10
+  width: 32rem
+  height: 100%
+  padding: 7rem 3rem 4rem
+  background-color: $foam
+  overflow-y: auto
+  box-shadow: 0 0 1rem rgba(#000, 0.1)
+  transform: translateX(-120%)
+  +smooth-scroll
+  +trans
+  &.open
+    transform: translateX(0)
+  &__close
+    position: absolute
+    top: 2rem
+    right: 2rem
+    background: none
+    padding: 0
+    width: 3.2rem
+    height: 3.2rem
+    border: 0
+    cursor: pointer
+    &::before, &::after
+      content: ''
+      position: absolute
+      left: 0.3rem
+      width: 80%
+      height: 2px
+      background-color: $main-color
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+    &:focus
+      outline: none
 
+.nav-list
+  margin: 0
+  padding: 0
+  list-style: none
+  li
+    margin-bottom: 1rem
+    &:last-child
+      margin-bottom: 0
+  a
+    font-size: 1.6rem
+    font-weight: 500
 
 .nav-toggle
   position: absolute
@@ -48,3 +96,18 @@
       &::before
         top: 0
         transform: rotate(-45deg)
+
+.nav-overlay
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 9
+  background-color: rgba(#000, 0.8)
+  opacity: 0
+  visibility: hidden
+  +trans
+  &.active
+    opacity: 1
+    visibility: visible

@@ -1,0 +1,65 @@
+.steps-list
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -15px
+  &__item
+    width: 20%
+    margin-bottom: 3rem
+    padding: 0 15px
+    font-size: 1.6rem
+    +md-block
+      width: 50%
+    +sm-block
+      width: 100%
+      text-align: center
+    &:nth-child(2n)
+      +md-block
+        .steps-list
+          &__icon-wrap
+            &::after
+              display: none
+    &:last-child
+      .steps-list
+        &__icon-wrap
+          &::after
+            display: none
+    p
+      &:last-child
+        margin-bottom: 0
+      strong
+        font-weight: 500
+  &__icon-wrap
+    position: relative
+    margin-bottom: 2rem
+    width: 5.2rem
+    height: 5.2rem
+    +sm-block
+      margin: 0 auto 1rem
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: calc(100% + 5rem)
+      width: 11rem
+      height: 0.8rem
+      background: url(images/general/arrow-long-right.svg) no-repeat center / contain
+      +lg-block
+        width: 6rem
+      +md-block
+        width: 11rem
+      +sm-block
+        display: none
+  &__number
+    position: absolute
+    bottom: -0.5rem
+    right: -1.2rem
+    width: 2.4rem
+    height: 2.4rem
+    border-radius: 50%
+    background-color: #fff
+    box-shadow: 0 5px 20px rgba(40, 123, 198, 0.25)
+    font-family: $din
+    font-size: 1.8rem
+    color: $accent
+    text-align: center
+    line-height: 2.4rem

@@ -43,3 +43,8 @@ if ( class_exists( 'acf' ) ) {
 
 	require get_template_directory() . '/inc/acf.php';
 }
+
+/**
+ * Custom Post Type
+ */
+require get_template_directory() . '/inc/custom-post-type.php';

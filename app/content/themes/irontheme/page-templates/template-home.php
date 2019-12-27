@@ -26,7 +26,7 @@ if ( have_rows('home_layout') ):
               <p class="hero__subtitle"><?php echo $subtitle; ?></p>
             <?php endif; ?>
 
-            <a href="#" class="btn">Узнать подробнее</a>
+            <a href="#" class="btn for-key_open">Узнать подробнее</a>
           </div>
 
           <div class="hero__bottom">
@@ -62,7 +62,7 @@ if ( have_rows('home_layout') ):
 
     <?php elseif ( get_row_layout() == 'about' ): ?>
 
-      <section class="about">
+      <section class="about" id="about">
         <div class="container">
 
           <div class="section-head text-center">
@@ -86,7 +86,7 @@ if ( have_rows('home_layout') ):
               <div class="about__left">
                 <?php echo $text; ?>
 
-                <a href="#" class="btn">Заказать бурение</a>
+                <a href="#" class="btn btn for-key_open">Заказать бурение</a>
 
                 <div class="about__depth">
                   <div class="about__depth-number about__depth-number--1">20<span> м</span></div>
@@ -117,7 +117,7 @@ if ( have_rows('home_layout') ):
 
     <?php elseif ( get_row_layout() == 'calculator' ): ?>
 
-      <section class="calculator">
+      <section class="calculator" id="calculator">
         <div class="container">
           <?php $title = get_sub_field( 'title' );
           if ($title): ?>
@@ -176,7 +176,7 @@ if ( have_rows('home_layout') ):
 
               <div class="calculator__result-wrap">
                 <div class="calculator__result">Итого под ключ: <span>0</span></div>
-                <a href="#" class="btn">Оставить заявку</a>
+                <a href="#" class="btn modal-calculator_open">Оставить заявку</a>
               </div>
             </div>
 
@@ -215,7 +215,7 @@ if ( have_rows('home_layout') ):
 
     <?php elseif ( get_row_layout() == 'equipment' ): ?>
 
-      <section class="equipment">
+      <section class="equipment" id="equipment">
         <div class="container">
           <div class="equipment__row">
             <div class="equipment__left">
@@ -250,7 +250,7 @@ if ( have_rows('home_layout') ):
                   <h3 class="equipment-list__title"><?php the_sub_field( 'title' ); ?></h3>
                   <p class="equipment-list__descr"><?php the_sub_field( 'descr' ); ?></p>
                   <p class="equipment-list__price">от <span><?php echo number_format( get_sub_field( 'price' ), 0, '', ' ' ); ?></span> ₽</p>
-                  <a href="#" class="btn">Заказать</a>
+                  <a href="#" class="btn equipment_open">Заказать</a>
                 </div>
               <?php endwhile; ?>
             </div>
@@ -262,7 +262,7 @@ if ( have_rows('home_layout') ):
 
     <?php elseif ( get_row_layout() == 'cta' ): ?>
 
-      <section class="cta" style="background-image: url(<?php echo THEME_URL; ?>/images/content/cta-bg.jpg);">
+      <section class="cta" style="background-image: url(<?php echo THEME_URL; ?>/images/content/cta-bg.jpg);" id="cta">
         <div class="container">
           <div class="row">
             <div class="cta__content">
@@ -293,7 +293,7 @@ if ( have_rows('home_layout') ):
 
     <?php elseif ( get_row_layout() == 'advantages' ): ?>
 
-      <section class="advantages">
+      <section class="advantages" id="advantages">
         <div class="container">
           <?php $title = get_sub_field( 'title' );
           if ($title): ?>
@@ -314,7 +314,7 @@ if ( have_rows('home_layout') ):
                     <?php $text = get_sub_field( 'text' );
                     if ($text): ?>
                       <?php echo $text; ?>
-                      <a href="#" class="btn">Получить консультацию</a>
+                      <a href="#" class="btn consultation_open" data-theme="<?php the_sub_field( 'title' ); ?>">Получить консультацию</a>
                     <?php endif; ?>
                   </div>
                 <?php endwhile; ?>
@@ -350,8 +350,8 @@ if ( have_rows('home_layout') ):
 
     <?php $gallery = get_sub_field( 'gallery' );
       if ($gallery): ?>
-      <section class="gallery">
-        <div class="container">
+      <section class="gallery" id="gallery">
+<!--        <div class="container">-->
           <div class="gallery-slider swiper-container">
             <div class="swiper-wrapper">
               <?php foreach ($gallery as $item): ?>
@@ -366,7 +366,7 @@ if ( have_rows('home_layout') ):
             <div class="swiper-button-prev"><?php ith_the_icon( 'chevron-left' ); ?></div>
             <div class="swiper-button-next"><?php ith_the_icon( 'chevron-right' ); ?></div>
           </div>
-        </div>
+<!--        </div>-->
       </section>
     <?php endif; ?>
 
@@ -375,5 +375,175 @@ if ( have_rows('home_layout') ):
   endwhile;
 endif;
 ?>
+
+<section class="installed" id="installed">
+  <div class="installed__filtration">
+    <div class="installed__filtration-inner">
+      <div class="section-head">
+        <h2 class="section-title">СИСТЕМЫ ФИЛЬТРАЦИИ</h2>
+        <p class="section-descr">Установка систем фильтрации воды <br>“под ключ“ <span>от <strong>30 000</strong> руб.</span></p>
+      </div>
+
+      <ul class="installed__filtration-list">
+        <li class="installed__filtration-list-item">
+          <img src="<?php echo THEME_URL; ?>/images/general/flask.svg" alt="">
+          <p>Химический анализ воды <br>в лаборатории</p>
+        </li>
+        <li class="installed__filtration-list-item">
+          <img src="<?php echo THEME_URL; ?>/images/general/pipe.svg" alt="">
+          <p>Монтаж, подключение системы <br>к водопроводу</p>
+        </li>
+        <li class="installed__filtration-list-item">
+          <img src="<?php echo THEME_URL; ?>/images/general/water-filter.svg" alt="">
+          <p>Выбор оптимального набора оборудования</p>
+        </li>
+        <li class="installed__filtration-list-item">
+          <img src="<?php echo THEME_URL; ?>/images/general/drop.svg" alt="">
+          <p>Подбор системы <br>фильтрации</p>
+        </li>
+      </ul>
+
+      <a href="#" class="btn order-filters_open">Заказать установку</a>
+    </div>
+  </div><!-- /.installed__filtration -->
+
+  <div class="installed__sewage">
+    <div class="installed__sewage-inner">
+      <div class="section-head">
+        <h2 class="section-title">автономная канализация</h2>
+        <p class="section-descr">Установка автономной канализации Септик <br>“под ключ“ <span>от <strong>62 000</strong> руб.</span></span></p>
+      </div>
+
+      <ul class="installed__sewage-list">
+        <li class="installed__sewage-list-item">
+          Создание проекта систем автономной канализации <br>дома
+        </li>
+        <li class="installed__sewage-list-item">
+          Земляные работы – <br>разработка котлована, прокладка магистрали
+        </li>
+        <li class="installed__sewage-list-item">
+          Протяжка трубопроводной <br>линии от дома до станции
+        </li>
+        <li class="installed__sewage-list-item">
+          Подведение электрокабеля <br>и установка станции
+        </li>
+        <li class="installed__sewage-list-item">
+          Подключение <br>трубопровода
+        </li>
+        <li class="installed__sewage-list-item">
+          Запуск и проверка <br>функционирования всей системы
+        </li>
+      </ul>
+
+      <a href="#" class="btn order-sewage_open">Заказать установку</a>
+    </div>
+
+  </div><!-- /.installed__sewage -->
+
+</section>
+
+  <section class="credit" id="credit">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">РАССРОЧКА И КРЕДИТ</h2>
+        <p class="section-descr">Мы предоставляем рассрочку и кредит на выгодных условиях. <br>Без первоначального взноса. С минимальным пакетом документов.</p>
+      </div>
+
+      <ul class="credit-list">
+        <li class="credit-list__item">Рассрочка <br>до 10 месяцев</li>
+        <li class="credit-list__item">Без первоначального <br>взноса</li>
+        <li class="credit-list__item">Кредит по паспорту <br>за 15 минут</li>
+        <li class="credit-list__item">Переплата 1,2% <br>от суммы кредита</li>
+      </ul>
+
+      <div class="credit-logos">
+        <div class="credit-logos__item">
+          <img src="<?php echo THEME_URL; ?>/images/content/logo-1.jpg" alt="">
+        </div>
+        <div class="credit-logos__item">
+          <img src="<?php echo THEME_URL; ?>/images/content/logo-2.jpg" alt="">
+        </div>
+        <div class="credit-logos__item">
+          <img src="<?php echo THEME_URL; ?>/images/content/logo-3.jpg" alt="">
+        </div>
+        <div class="credit-logos__item">
+          <img src="<?php echo THEME_URL; ?>/images/content/logo-4.jpg" alt="">
+        </div>
+        <div class="credit-logos__item">
+          <img src="<?php echo THEME_URL; ?>/images/content/logo-5.jpg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="testimonial" id="testimonial">
+    <div class="container">
+      <h2 class="section-title text-center">ОТЗЫВЫ наших КЛИЕНТОВ</h2>
+    </div>
+
+    <?php $testimonial = get_any_post( 'testimonial', -1 );
+
+    if ($testimonial->have_posts()): ?>
+      <div class="testimonial-slider swiper-container">
+        <div class="swiper-wrapper">
+          <?php while ($testimonial->have_posts()): $testimonial->the_post(); ?>
+            <div class="testimonial-slider__item swiper-slide">
+              <?php the_content(); ?>
+            </div>
+          <?php endwhile; wp_reset_postdata(); ?>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    <?php endif; ?>
+  </section>
+
+  <section class="steps" id="steps">
+    <div class="container">
+      <h2 class="section-title text-center">Этапы работы</h2>
+
+      <div class="steps-list">
+        <div class="steps-list__item">
+          <div class="steps-list__icon-wrap">
+            <span class="steps-list__number">1</span>
+            <img src="<?php echo THEME_URL; ?>/images/general/call.svg" width="52" alt="">
+          </div>
+          <p><strong>Оставляете заявку</strong> <br>на бесплатный выезд инженера</p>
+        </div>
+        <div class="steps-list__item">
+          <div class="steps-list__icon-wrap">
+            <span class="steps-list__number">2</span>
+            <img src="<?php echo THEME_URL; ?>/images/general/contract.svg" width="52" alt="">
+          </div>
+          <p><strong>Заключаем договор.</strong> <br>Определяем глубину скважины</p>
+        </div>
+        <div class="steps-list__item">
+          <div class="steps-list__icon-wrap">
+            <span class="steps-list__number">3</span>
+            <img src="<?php echo THEME_URL; ?>/images/general/drill.svg" width="52" alt="">
+          </div>
+          <p><strong>Бурение скважины</strong> <br>и монтаж обсадных труб</p>
+        </div>
+        <div class="steps-list__item">
+          <div class="steps-list__icon-wrap">
+            <span class="steps-list__number">4</span>
+            <img src="<?php echo THEME_URL; ?>/images/general/water-stopcock.svg" width="52" alt="">
+          </div>
+          <p><strong>Обустройство скважины.</strong> <br>Подписываем акт выполненных работ</p>
+        </div>
+        <div class="steps-list__item">
+          <div class="steps-list__icon-wrap">
+            <span class="steps-list__number">5</span>
+            <img src="<?php echo THEME_URL; ?>/images/general/book.svg" width="52" alt="">
+          </div>
+          <p><strong>Делаем <br>экспресс–анализ <br>воды</strong> и выдаем паспорт скважины</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="#" class="btn for-key_open">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
 
 <?php get_footer();

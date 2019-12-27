@@ -1,0 +1,44 @@
+.testimonial
+  background-color: #E8FAFE
+  .section-title
+    +sm-block
+      margin-bottom: 1rem
+
+.testimonial-slider
+  margin: 0
+  padding: 3rem 1rem 5rem
+  +from(1401px)
+    margin: 0 9.5rem
+  .swiper-wrapper
+    align-items: center
+  &__item
+    position: relative
+    padding: 7.5rem 4.5rem 5.5rem
+    background-color: #fff
+    box-shadow: 0 10px 30px rgba(145, 197, 248, 0.25)
+    border-radius: 1rem
+    transform: scale(0.9)
+    opacity: 0.5
+    +trans
+    +sm-block
+      padding: 4rem 2rem 2rem
+    &::before
+      content: ''
+      position: absolute
+      top: 3rem
+      left: 2rem
+      width: 4rem
+      height: 2.5rem
+      background: url(images/general/quote.svg) no-repeat center / contain
+      +trans
+      +sm-block
+        width: 2.5rem
+        height: 1.7rem
+        top: 1rem
+        left: 1rem
+    &.swiper-slide-active
+      transform: scale(1)
+      opacity: 1
+    p
+      &:last-child
+        margin-bottom: 0

@@ -1,0 +1,127 @@
+.installed
+  display: flex
+  padding: 0
+  +md-block
+    display: block
+  &__filtration
+    width: 45.6%
+    padding: 9.5rem 0 8.5rem
+    background: url(images/general/install-filters-bg.png) no-repeat 300px bottom / cover
+    +md-block
+      width: auto
+    &-inner
+      display: flex
+      flex-direction: column
+      height: 100%
+      max-width: 50rem
+      margin-left: auto
+      +md-block
+        max-width: 720px
+        margin: 0 auto
+        padding-right: 15px
+        padding-left: 15px
+      +sm-block
+        max-width: 540px
+      +xs-block
+        max-width: none
+      .btn
+        margin-top: auto
+        margin-left: 5rem
+        align-self: flex-start
+        +md-block
+          align-self: center
+          margin-left: 0
+    .section-head
+      +md-block
+        text-align: center
+    .section-descr
+      margin-top: 1rem
+      span
+        color: $accent
+        strong
+          font-size: 2rem
+          font-weight: 600
+    &-list
+      margin: 0 0 5.5rem 5rem
+      padding: 0
+      list-style: none
+      +sm-block
+        margin-left: 0
+      &-item
+        display: flex
+        align-items: center
+        margin-bottom: 3.5rem
+        &:last-child
+          margin-bottom: 0
+        img
+          flex-shrink: 0
+          width: 3.6rem
+          margin-right: 1.5rem
+        p
+          margin: 0
+  &__sewage
+    width: 54.4%
+    padding: 9.5rem 0 8.5rem 7rem
+    background: $blue url(images/general/install-sawage-bg.jpg) no-repeat center / cover
+    color: #fff
+    +md-block
+      width: auto
+      padding-left: 0
+    &-inner
+      display: flex
+      flex-direction: column
+      height: 100%
+      max-width: 60rem
+      +md-block
+        max-width: 720px
+        margin: 0 auto
+        padding-right: 15px
+        padding-left: 15px
+      +sm-block
+        max-width: 540px
+      +xs-block
+        max-width: none
+      .btn
+        align-self: flex-start
+        margin-top: auto
+        +md-block
+          align-self: center
+    .section-head
+      +md-block
+        text-align: center
+    .section-descr
+      margin: 1rem 0 0
+      color: #FCFCFC
+      span
+        color: #fff
+      strong
+        font-size: 2rem
+        font-weight: 600
+    &-list
+      margin: 0 0 6rem
+      padding: 0
+      list-style: none
+      column-count: 2
+      counter-reset: list
+      +sm-block
+        column-count: 1
+      &-item
+        position: relative
+        display: inline-block
+        vertical-align: top
+        width: 100%
+        margin-bottom: 2.5rem
+        padding-left: 5rem
+        color: #E5E5E5
+        counter-increment: list
+        &:last-child
+          margin-bottom: 0
+        &::before
+          content: counter(list, decimal-leading-zero)
+          position: absolute
+          top: 0
+          left: 0
+          font-family: $din
+          font-size: 4.2rem
+          color: $accent
+          line-height: 1

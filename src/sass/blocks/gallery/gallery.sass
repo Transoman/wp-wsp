@@ -5,43 +5,29 @@
       padding: 0
 
 .gallery-slider
-  overflow: visible
-  .swiper-wrapper
-    overflow: visible
   &__item
     position: relative
-    &.swiper-slide-prev,
-    &.swiper-slide-next + div + div
-      &::before
-        content: ''
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
-        background-color: rgba($blue, 0.5)
-        +trans
+    background-color: $blue
+    &:hover
+      .gallery-slider
+        &__view-full
+          transform: scale(1.2)
+    &.swiper-slide-active
       .gallery-slider
         &__view-full
           opacity: 0
-    &.swiper-slide-next + div + div
-      &::before
-        +md-block
-          display: none
-    &.swiper-slide-next + div
-      +md-block
-        &::before
-          content: ''
-          position: absolute
-          top: 0
-          right: 0
-          bottom: 0
-          left: 0
-          background-color: rgba($blue, 0.5)
-          +trans
+        &__img
+          opacity: 0.5
+      & + div + div + div + div
+        .gallery-slider
+          &__view-full
+            opacity: 0
+          &__img
+            opacity: 0.5
   &__img
     display: block
     width: 100%
+    +trans
   &__view-full
     position: absolute
     top: 2rem
@@ -63,14 +49,12 @@
       font-size: 3rem
       fill: #fff
   .swiper-button-prev
-    left: 0
-    transform: translateX(-50%)
+    left: 16.5%
     +sm-block
       left: 1rem
       transform: none
   .swiper-button-next
-    right: 0
-    transform: translateX(50%)
+    right: 16.5%
     +sm-block
       right: 1rem
       transform: none
