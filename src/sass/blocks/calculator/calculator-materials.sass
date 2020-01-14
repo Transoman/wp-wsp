@@ -52,6 +52,45 @@
     font-size: 1.2rem
     color: $silver
     text-align: center
+    cursor: pointer
+    +trans
+    &:hover
+      border-color: $dove-gray
+      color: $dove-gray
+      &::before, &::after
+        opacity: 1
+        visibility: visible
+    &::before
+      content: attr(data-descr)
+      position: absolute
+      top: calc(100% + 1rem)
+      right: -0.5rem
+      z-index: 1
+      width: 15rem
+      padding: 1rem
+      background-color: $blue
+      font-size: 1rem
+      color: #fff
+      border-radius: 0.5rem
+      box-shadow: 0 10px 15px rgba(145, 197, 248, 0.25)
+      opacity: 0
+      visibility: hidden
+      +trans
+    &::after
+      content: ''
+      position: absolute
+      top: calc(100% + 0.5rem)
+      left: 50%
+      transform: translateX(-50%)
+      z-index: 1
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 5px 5px 5px
+      border-color: transparent transparent $blue transparent
+      opacity: 0
+      visibility: hidden
+      +trans
   &__title
     margin-top: 1.5rem
     margin-bottom: 0.5rem

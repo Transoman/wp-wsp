@@ -15,7 +15,7 @@
 <body <?php body_class(); ?>>
 
 <div class="wrapper">
-  <header class="header">
+  <header class="header<?php echo !is_front_page() && !is_home() ? ' header--inner' : ''; ?>">
     <div class="container">
 
       <button type="button" class="nav-toggle">

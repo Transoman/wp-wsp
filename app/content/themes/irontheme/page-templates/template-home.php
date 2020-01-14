@@ -136,7 +136,7 @@ if ( have_rows('home_layout') ):
                 <div class="swiper-wrapper">
                   <?php while (have_rows( 'list_materials' )): the_row(); ?>
                     <div class="calculator-materials__item swiper-slide">
-                      <a href="#" class="calculator-materials__info">i</a>
+                      <span class="calculator-materials__info" data-descr="<?php the_sub_field( 'descr' ); ?>">i</span>
                       <?php echo wp_get_attachment_image( get_sub_field( 'img' ), 'calculator-material' ); ?>
 
                       <div class="calculator-materials__title"><?php the_sub_field( 'title' ); ?></div>

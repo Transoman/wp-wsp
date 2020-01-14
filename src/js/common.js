@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
     backFocus: false
   });
 
-  let range = $('.calculator-depth')[0];
+  let range = document.querySelector('.calculator-depth');
 
   if (range) {
     noUiSlider.create(range, {
@@ -190,9 +190,13 @@ jQuery(document).ready(function($) {
     let material = $('.calculator-materials__item');
     let materialBtn = material.find('.btn');
     let price = 0;
-    let depth = range.noUiSlider.get();
     let result = $('.calculator__result span');
     let resultBtn = $('.calculator__result-wrap .btn');
+    let depth = 0;
+
+    if (range) {
+      depth = range.noUiSlider.get();
+    }
 
     materialBtn.click(function(e) {
       e.preventDefault();
@@ -204,10 +208,12 @@ jQuery(document).ready(function($) {
       result.text(addSpaces(price * depth));
     });
 
-    range.noUiSlider.on('update', function (values, handle) {
-      depth = values[handle];
-      result.text(addSpaces(price * values[handle]));
-    });
+    if (range) {
+      range.noUiSlider.on('update', function (values, handle) {
+        depth = values[handle];
+        result.text(addSpaces(price * values[handle]));
+      });
+    }
 
     resultBtn.click(function() {
       let name = $('.calculator-materials__item.check').find('.calculator-materials__descr').text()

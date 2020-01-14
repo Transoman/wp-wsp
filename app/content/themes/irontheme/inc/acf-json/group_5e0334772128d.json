@@ -297,6 +297,25 @@
                                     "maxlength": ""
                                 },
                                 {
+                                    "key": "field_5e1dc519b3570",
+                                    "label": "Описание",
+                                    "name": "descr",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "new_lines": "br"
+                                },
+                                {
                                     "key": "field_5e03669ca1135",
                                     "label": "Цена",
                                     "name": "price",
@@ -714,5 +733,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1577373224
+    "modified": 1579009329
 }
