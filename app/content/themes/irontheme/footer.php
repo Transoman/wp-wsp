@@ -44,8 +44,8 @@
     </div>
   </div>
 
-  <div class="modal" id="equipment">
-    <button type="button" class="modal__close equipment_close"></button>
+  <div class="modal" id="equipment-modal">
+    <button type="button" class="modal__close equipment-modal_close"></button>
 
     <div class="modal__content">
       <?php echo do_shortcode( '[contact-form-7 id="93" title="ОБУСТРОЙСТВО СКВАЖИНЫ"]' ); ?>

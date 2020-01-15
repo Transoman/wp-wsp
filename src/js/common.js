@@ -231,7 +231,7 @@ jQuery(document).ready(function($) {
 
   $('.advantages-tabs').tabslet();
 
-  $('.equipment_open').click(function() {
+  $('.equipment-modal_open').click(function() {
     let name = $(this).parent().find('.equipment-list__descr').text();
 
     $('#equipment input[name="your-serv"]').val(name);

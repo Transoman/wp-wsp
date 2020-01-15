@@ -136,12 +136,14 @@ if ( have_rows('home_layout') ):
                 <div class="swiper-wrapper">
                   <?php while (have_rows( 'list_materials' )): the_row(); ?>
                     <div class="calculator-materials__item swiper-slide">
-                      <span class="calculator-materials__info" data-descr="<?php the_sub_field( 'descr' ); ?>">i</span>
+                      <span class="calculator-materials__info" data-descr="<?php the_sub_field( 'descr' ); ?>">
+                        <?php ith_the_icon( 'info' ); ?>
+                      </span>
                       <?php echo wp_get_attachment_image( get_sub_field( 'img' ), 'calculator-material' ); ?>
 
                       <div class="calculator-materials__title"><?php the_sub_field( 'title' ); ?></div>
                       <div class="calculator-materials__descr"><?php the_sub_field( 'short_descr' ); ?></div>
-                      <span class="calculator-materials__price"><?php echo number_format( get_sub_field( 'price' ), 0, '', ' ' ) ; ?> <span><span class="rub">₽</span>/м</span></span>
+                      <span class="calculator-materials__price"><?php echo number_format( get_sub_field( 'price' ), 0, '', ' ' ) ; ?> <span><span class="rub">a</span>/м</span></span>
                       <a href="javascript:void(0)" class="btn" data-price="<?php the_sub_field( 'price' ); ?>">Выбрать</a>
                     </div>
                   <?php endwhile; ?>
@@ -249,8 +251,8 @@ if ( have_rows('home_layout') ):
                 <div class="equipment-list__item">
                   <h3 class="equipment-list__title"><?php the_sub_field( 'title' ); ?></h3>
                   <p class="equipment-list__descr"><?php the_sub_field( 'descr' ); ?></p>
-                  <p class="equipment-list__price">от <span><?php echo number_format( get_sub_field( 'price' ), 0, '', ' ' ); ?></span> <span class="rub">₽</span></p>
-                  <a href="#" class="btn equipment_open">Заказать</a>
+                  <p class="equipment-list__price">от <span><?php echo number_format( get_sub_field( 'price' ), 0, '', ' ' ); ?></span> <span class="rub">c</span></p>
+                  <a href="#" class="btn equipment-modal_open">Заказать</a>
                 </div>
               <?php endwhile; ?>
             </div>
