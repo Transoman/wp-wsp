@@ -37,3 +37,30 @@
     background-color: #e5e5e5
     cursor: not-allowed
     color: #fff
+
+.float-btn
+  position: fixed
+  right: 5rem
+  bottom: 5rem
+  z-index: 10
+  width: 7rem
+  height: 7rem
+  background-color: $blue
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  animation: pulse 2s linear infinite
+  +trans
+  +sm-block
+    width: 4rem
+    height: 4rem
+    right: 2rem
+    bottom: 2rem
+  &:hover
+    background-color: lighten($blue, 5%)
+  svg
+    font-size: 3rem
+    fill: #fff
+    +sm-block
+      font-size: 1.5rem

@@ -104,7 +104,7 @@ if ( have_rows('home_layout') ):
                 </ul>
 
                 <div class="about__img">
-                  <div class="ribbon-free">Анализ води <br><span>бесплатно</span></div>
+                  <div class="ribbon-free">Анализ воды <br><span>бесплатно</span></div>
                   <img src="<?php echo THEME_URL; ?>/images/general/about-img.png" alt="">
                 </div>
 

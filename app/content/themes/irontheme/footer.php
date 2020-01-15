@@ -22,9 +22,15 @@
         <?php endif; ?>
       </div>
 
-      <p class="copy">© <?php echo date('Y'); ?> Группа компаний «Строительство, бурение, ремонт»</p>
+      <p class="copy">© <?php echo date('Y'); ?> Группа компаний «Water Service Professional»</p>
     </div>
   </footer><!-- #colophon -->
+
+  <?php if ($phone): ?>
+    <a href="tel:<?php echo preg_replace( '![^0-9\+]+!', '', $phone ); ?>" class="float-btn">
+      <?php ith_the_icon( 'telephone' ); ?>
+    </a>
+  <?php endif; ?>
 
 </div><!-- /.wrapper -->
 

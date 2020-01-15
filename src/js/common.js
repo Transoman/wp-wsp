@@ -40,7 +40,6 @@ jQuery(document).ready(function($) {
   let initModal = function() {
     $('.modal').popup({
       transition: 'all 0.3s',
-      scrolllock: true,
       onclose: function() {
         $(this).find('label.error').remove();
         $(this).find('.wpcf7-response-output').hide();
