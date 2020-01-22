@@ -159,8 +159,8 @@ if ( have_rows('home_layout') ):
                   <div class="calculator__area">
                     <label for="area" class="form-label">Район</label>
                     <select name="area" id="area" class="form-field form-field--select">
-                      <?php while (have_rows( 'list_area' )): the_row(); ?>
-                        <option value="<?php the_sub_field( 'name' ); ?>"><?php the_sub_field( 'name' ); ?></option>
+                      <?php $i = 0; while (have_rows( 'list_area' )): the_row(); ?>
+                        <option value="<?php the_sub_field( 'name' ); ?>" data-depth="<?php the_sub_field( 'depth' ); ?>"<?php selected( $i++, 0, true ); ?>><?php the_sub_field( 'name' ); ?></option>
                       <?php endwhile; ?>
                     </select>
                   </div>

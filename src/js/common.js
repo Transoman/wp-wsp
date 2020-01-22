@@ -164,10 +164,10 @@ jQuery(document).ready(function($) {
       connect: 'lower',
       format: {
         to: function(v) {
-          return Math.round(parseInt(v));
+          return Math.ceil(v);
         },
         from: function(v) {
-          return Math.round(parseInt(v));
+          return Math.ceil(v);
         },
       }
     });
@@ -194,7 +194,7 @@ jQuery(document).ready(function($) {
     let depth = 0;
 
     if (range) {
-      depth = range.noUiSlider.get();
+      depth = range.noUiSlider.set(parseInt($('#area option:selected').data('depth'), 10));
     }
 
     materialBtn.click(function(e) {
@@ -204,6 +204,7 @@ jQuery(document).ready(function($) {
       $(this).parent().addClass('check');
 
       price = parseInt($(this).data('price'), 10);
+      depth = range.noUiSlider.get();
       result.text(addSpaces(price * depth));
     });
 
@@ -214,8 +215,12 @@ jQuery(document).ready(function($) {
       });
     }
 
+    $('#area').change(function() {
+      depth = range.noUiSlider.set(parseInt($(this).find(':selected').data('depth'), 10));
+    });
+
     resultBtn.click(function() {
-      let name = $('.calculator-materials__item.check').find('.calculator-materials__descr').text()
+      let name = $('.calculator-materials__item.check').find('.calculator-materials__descr').text();
       let area = $('#area').val();
       let sum = result.text();
 
